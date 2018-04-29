@@ -10,6 +10,7 @@ The report can be found here [SLAM Report](report/main.pdf).
 Part 1 of the project was performed with the following files.
 [Gazebo World File](worlds/kitchen_dining.world)
 [Mapping File](launch/mapping.launch)
+[RTABMAP DB](files/rtabmap.db)
 ![Kitchen Mapping Setup](https://raw.githubusercontent.com/priteshgudge/slam_project/master/images/initial_setup1.png "SLAM Implementation Setup")
 
 ## Part 2 - Custom World
