@@ -1,0 +1,33 @@
+\begin{thebibliography}{1}
+
+\bibitem{loopclosure}
+M.~Labbe, ``Loop closure detection.''
+  \url{https://github.com/introlab/rtabmap/wiki/Loop-closure-detection}.
+
+\bibitem{rosrtabmap}
+M.~Labbe, ``Rtab-map's ros-pkg.'' \url{http://wiki.ros.org/rtabmap_ros}.
+
+\bibitem{rtabdbviewer}
+M.~Labbe, ``Database viewer.''
+  \url{https://github.com/introlab/rtabmap/wiki/Tools#database-viewer}.
+
+\bibitem{occgripmap}
+Multiple, ``Occupancy grid mapping.''
+  \url{https://en.wikipedia.org/wiki/Occupancy_grid_mapping}.
+
+\bibitem{gridslam}
+C.~Stachniss, ``Grid slam.''
+  \url{http://ais.informatik.uni-freiburg.de/teaching/ws12/mapping/pdf/slam13-gridfastslam.pdf}.
+
+\bibitem{graphslam}
+Multiple, ``Graph slam.'' \url{https://en.wikipedia.org/wiki/GraphSLAM}.
+
+\bibitem{vbow}
+Multiple, ``Graph slam.''
+  \url{https://en.wikipedia.org/wiki/Bag-of-words_model_in_computer_vision}.
+
+\bibitem{surf}
+A.~M. .~A. K., ``Introduction to surf.''
+  \url{http://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_feature2d/py_surf_intro/py_surf_intro.html}.
+
+\end{thebibliography}
