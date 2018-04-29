@@ -46,37 +46,6 @@ Robot, IEEEtran, Udacity, \LaTeX, SLAM.
 The RTAB-Map ROS wrapper\cite{rosrtabmap} is leveraged with visual representation in real time via rtabmapviz. The resultant map is stored in local database that be later interrogated via rtabmap-databaseViewer\cite{rtabdbviewer}.
 
 
-%example for inserting image
-\begin{figure}[thpb]
-      \centering
-      \includegraphics[width=\linewidth]{RobotRevolution5}
-      \caption{Robot Revolution.}
-      \label{fig:robot1}
-\end{figure}
-
-\subsection{Subsection Heading Here}
-Subsection text here.
-
-\subsubsection{Subsubsection Heading Here}
-Subsubsection text here.
-
-%example for building table
-\begin{table}[h]
-\caption{Table}
-\label{table_example}
-\begin{center}
-\begin{tabular}{|c||c|}
-\hline
-One & Two\\
-\hline
-Three & Four\\
-\hline
-\end{tabular}
-\end{center}
-\end{table}
-
-
-
 \section{Background}
 When a robot encounters a new environment where there is no supplied map, it needs to be able to create this map and localise its pose using it. This combined localisation and mapping process is referred to as SLAM (Simultaneous Localisation and Mapping).
 
@@ -101,19 +70,6 @@ Robots are of varying dimensions inclusive of height. Whilst mapping a 2d enviro
 
 However building a 3D map is more costly then a 2D map. This is not only in terms of Compute \& Data costs but also in the cost of the sensors required. However, simple sensors such as a single camera may be cheaper but the algorithms required can be more complex.
 
-
-
-%example for Bullet point list
-\begin{itemize}
-\item example 1
-\item example 2
-\end {itemize}
-
-%example for numbered list
-\begin{enumerate}
-\item example 1
-\item example 2
-\end{enumerate}
 
 \section{Simulations}
 
@@ -143,21 +99,22 @@ Two worlds were created in gazebo - one supplied as kitchen\_dining.world (Fig. 
 
 \begin{figure}[thpb]
       \centering
-      \includegraphics[width=\linewidth]{images/cafekitchen}
+      \includegraphics[width=\linewidth]{images/1_world_gz}
       \caption{Custom World}
       \label{fig:customworld}
 \end{figure}
 
 \subsubsection{Parameters}
-The Kitchen World model was mapped with RtabMap features Kp/MaxFeatures 400 and Vis/MinInliers at 15.
+The Kitchen World model was mapped with RtabMap features "Kp/MaxFeatures" 400 and "Vis/MinInliers" at 15, and "Reg/Strategy" 0
 
+The Custom World model was mapped with RtabMap features "Kp/MaxFeatures" 400 and "Vis/MinInliers" at 20, and "Reg/Strategy" 1
 
 
 
 \section{Results}
 
 \subsection{Kitchen World}
-The kitchen world 2D and 3D maps are shown in figure\ref{fig:kitchen2d} and figure \ref{fig:kitchen3d} respectively. In the 2D Map and the 3D map the general layout of the kitchen and the furniture structures are visible. 
+The kitchen world 2D and 3D maps are shown in figure\ref{fig:kitchen2d} and figure \ref{fig:kitchen3d} respectively. In the 2D Map and the 3D map the general layout of the kitchen and the furniture structures are visible. A total of 198 loop closures were detected(Fig. \ref{fig:kitchenloop}).
 
 \begin{figure}[thpb]
       \centering
@@ -174,21 +131,49 @@ The kitchen world 2D and 3D maps are shown in figure\ref{fig:kitchen2d} and figu
       \label{fig:kitchen3d}
 \end{figure}
 
-\subsection{Custom Cafe World}
+\begin{figure}[thpb]
+      \centering
+      \includegraphics[width=\linewidth]{images/loop_closures}
+      \caption{Kitchen World Loop Closures}
+      \label{fig:kitchenloop}
+\end{figure}
 
+\subsection{Custom World}
+The kitchen world 2D and 3D maps are shown in figure\ref{fig:custom2d} and figure \ref{fig:custom3d} respectively. In the 2D Map and the 3D map the general layout of the floor and the furniture structures are visible. A total of 237 loop closures were found(Fig. \ref{fig:customstats} ).
+
+\begin{figure}[thpb]
+      \centering
+      \includegraphics[width=\linewidth]{images/map2_2d}
+      \caption{Custom World 2D map}
+      \label{fig:custom2d}
+\end{figure}
+
+
+\begin{figure}[thpb]
+      \centering
+      \includegraphics[width=\linewidth]{images/9_3d_view}
+      \caption{Custom World 3D Map}
+      \label{fig:custom3d}
+\end{figure}
+
+\begin{figure}[thpb]
+      \centering
+      \includegraphics[width=\linewidth]{images/8_graph_stats}
+      \caption{Custom World Stats}
+      \label{fig:customstats}
+\end{figure}
 \subsection{Technical Comparison} % only facts
 The kitchen\_dining model performed significantly better then the student created cafe model. This was due to the richer and more complex features of the kitchen\_dining model.
 
 \section{Discussion}
 The robot was teleoped (navigated via the keyboard) around the room. At some points the robot did not move forward. This appeared to be when it started to perform loop closure. 
+The parameters were not changed from the default provided as satisfactory result was obtained with the same.
+However the 3D map quickly started to resemble the physical kitchen dining gazebo model. To improve loop detection rates some, on the spot circles were performed. Of particular note were the features in the main kitchen area. More SURF features were identified there as there was more variation in the surfaces.
 
-However the 3D map quickly started to resemble the physical kitchen dining gazebo model. To improve loop detection rates some, on the spot circles were performed. Of particular note were the features in the main kitchen area. More SURF features were identified there as there was more variation in the surface s.
 
-............
-Kp/MaxFeatures was halved to 200 and Vis/MinInliers was reduced from 15 to 10.
-...........
+For the custom layout Vis/MinInliers was increased from 15 to 20 and Reg/Strategy was changed to 1(Including ICP). As the size of the environment was small and to prevent repeated and incorrect loop closures the above values of parameters were chosen.
 
-.......The nick building gazebo model wall surfaces were tiled, repeatable pattern with lack of other discerning features sometimes caused the loop closure detection to map to an incorrect previous image. This then distorted the map. Additional features were added to achieve a successful map............
+The custom layout gazebo model wall surfaces were tiled, repeatable pattern with lack of other discerning features sometimes caused the loop closure detection to map to an incorrect previous image. This then distorted the map. Additional features were added to achieve a successful map.
 
 
 
@@ -201,7 +186,7 @@ Being able to map an environment cost effectively to create a replicated virtual
 Examples:
 \begin{itemize}
 \item Adding more sensors to collect data e.g. 3D Lidar
-\item Modifying the sensor location and layout. e.g. Adding RGBD camera's to the sides of the robot, to collect data about the side surrounding
+\item Modifying the sensor location and layout. e.g. Adding RGBD camera's to the sides of the robot, to collect data about the lateral surroundings.
 \end{itemize}
 
 \subsection{Hardware Deployment}
