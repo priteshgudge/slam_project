@@ -10,11 +10,11 @@ The report can be found here [SLAM Report](report/main.pdf).
 Part 1 of the project was performed with the following files.
 [Gazebo World File](worlds/kitchen_dining.world)
 [Mapping File](launch/mapping.launch)
-[!alt text](images/initial_setup1.png?raw=true "SLAM Implementation")
+[!alt text](https://raw.githubusercontent.com/priteshgudge/slam_project/master/images/initial_setup1.png "SLAM Implementation Setup")
 
 ## Part 2 - Custom World
 Part 2 of the project was performed with the following files.
 [Gazebo World File](worlds/layout2.world)
 [Mapping File](launch/mapping2.launch)
-[!alt text](images/part2/2_start.png?raw=true "SLAM Implementation")
+[!alt text](https://raw.githubusercontent.com/priteshgudge/slam_project/master/images/part2/2_start.png "SLAM Implementation Setup")
 
