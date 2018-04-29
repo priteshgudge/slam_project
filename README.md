@@ -6,6 +6,10 @@ The images can be found in the [Images](images/) folder.
 
 The report can be found here [SLAM Report](report/main.pdf).
 
+The RTAB-Map DB is on GITLFS. It can be accessed with this link https://github.com/priteshgudge/slam_project/blob/master/files/rtabmap.db?raw=true 467MB
+
+
+
 ## Part 1 - Kitchen World
 Part 1 of the project was performed with the following files.
 [Gazebo World File](worlds/kitchen_dining.world)
